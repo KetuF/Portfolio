@@ -1,4 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
-body{
-    background-color: black;
+/* =============================================
+   ESTILOS GLOBALES — Portfolio JF
+   Aquí van: reset, variables CSS, estilos de body
+   y cualquier regla que aplique a toda la app.
+   ============================================= */
+
+/* RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* VARIABLES DE DISEÑO */
+:root {
+  --bg:           #080808;
+  --bg2:          #0e0e0e;
+  --bg3:          #141414;
+  --card:         #111111;
+  --border:       rgba(255, 255, 255, 0.07);
+  --border-glow:  rgba(138, 255, 180, 0.18);
+  --accent:       #7effa0;
+  --accent2:      #5de8ff;
+  --accent3:      #c77dff;
+  --text:         #f0f0f0;
+  --muted:        #888;
+  --radius:       20px;
+  --radius-sm:    12px;
+  --glow:         0 0 40px rgba(126, 255, 160, 0.12);
+  --glow2:        0 0 60px rgba(93, 232, 255, 0.08);
+}
+
+/* BASE */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* NOISE OVERLAY — efecto de grano sutil sobre toda la app */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.5;
 }
