@@ -1,0 +1,626 @@
+html, body {
+  height: 100%;
+  overflow: hidden !important;
+}
+#introScreen {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9999;
+  overflow: hidden !important;
+  pointer-events: auto;
+  touch-action: none;
+}
+.LogoPantalla {
+  width: 250px;
+  height: 250px;
+  transform: scale(1.2);
+}
+
+/* FONDO PRINCIPAL */
+.ContenedorFondoPrincipal{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.SombraFondoPrincipal{
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 0.9) 100%
+  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+.ContenedorFondoPrincipal img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -10;
+}
+.ContenedorNombre{
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  line-height: 0.9;
+}
+.ContenedorNombre p{
+  color: white;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 36px;
+}
+.ContenedorNombre .nombre{
+  font-size: clamp(14px, 2vw, 24px);
+}
+.ContenedorNombre .apellido{
+  font-size: clamp(40px, 8vw, 100px);
+}
+
+/* NOSOTROS */
+.ContenedorAboutMe{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.ContenedorAboutMe img{
+  width: min(90%, 1200px);
+  height: auto;
+}
+.ContenedorNosotros{
+  width: 100%;
+  height: 100%;
+  background-color: #EDEBE6;
+}
+
+.Separacion{
+  width: 100%;
+  height: 100px;
+  background: #EDEBE6;
+  /* background: linear-gradient(180deg, rgba(237, 235, 230, 1) 0%, rgba(0, 0, 0, 1) 100%); */
+}
+.ContenedorAboutMe2{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.about2-desktop{
+  width: 95%;
+  height: auto;
+  display: block;
+}
+
+.about2-mobile{
+  display: none;
+}
+.ContenedorNosotros2{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+}
+.Nosotros{
+  color: white;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 45px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.NosotrosTexto{
+  color: white;
+  width: 40%;
+  /* font-family: "Special Gothic Expanded One", sans-serif; */
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+}
+.NosotrosTexto .nosotros {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: -0.2rem 0;
+  text-align: center;
+  font-style: normal;
+}
+.NosotrosTexto .parrafo {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: -0.1rem 0;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: bolder;
+  font-style: normal;
+}
+.FotoPerfil{
+  display: contents;
+  border: white;
+}
+.FotoPerfil img{
+  width: 14%;
+  border-radius: 50%;
+}
+
+.CapaTransparente{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 10;
+}
+
+/* HISTORIA */
+.ContenedorHistoria {
+  background: #fafafa;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.horizontal-wrapper {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+  position: relative;
+}
+.panel {
+  min-width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 2rem;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+.panel img {
+  width: 600px;
+  max-height: 70%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: absolute;
+}
+.texto-foto {
+  position: absolute;
+  max-width: 60%;
+  padding: 2rem;
+  font-style: italic;
+  text-align: center;
+  left: 52%;
+  z-index: -1;
+}
+.texto-foto .titulo {
+  font-size: 4rem;
+  font-weight: bold;
+  display: block;
+  mix-blend-mode: difference;
+}
+.texto-foto .anio {
+  font-size: 6rem;
+  font-weight: bold;
+  color: black;
+  display: block;
+  mix-blend-mode: difference;
+  text-shadow: 3px 3px 2px #00000080;
+}
+.texto-foto.top{
+  margin-left: 180px;
+}
+.texto-foto.bottom{
+  margin-left: 180px;
+  margin-top: 500px;
+}
+.panel img.top {
+  top: 1%;
+}
+.panel img.bottom {
+  bottom: 1%;
+}
+.TituloHistoria{
+  display: inline-block;
+  position: relative;
+  font-size: 12rem;
+  font-weight: bold;
+}
+.TituloHist {
+  position: relative;
+  display: block;
+  top: 50px;
+  left: 50px;
+  font-style: italic;
+  padding-right: 100px;
+}
+.TituloOria {
+  display: block;
+  position: relative;
+  top: -50px;
+  left: 200px;
+  font-style: italic;
+  padding-right: 100px;
+}
+
+/* Como Trabajamos */
+.ContenedorTrabajo{
+  width: 100%;
+  height: auto;
+  background-color: black;
+  margin-bottom: 100px;
+  mix-blend-mode: difference;
+  position: relative;
+  overflow: hidden;
+}
+
+.ContenedorHabilidades{
+    width: 100%;
+    height: 340px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    margin-bottom: 20%;
+}
+
+.ContenedorHabilidades div{
+    height: 230px;
+    display: flex;
+}
+
+.TituloTrabajo{
+  color: white;
+  font-size: 45px;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 60px;
+}
+.ParrafoTrabajo, .ParrafoTrabajo2{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: -0.2rem 0;
+}
+.TrabajoTexto, .TrabajoTexto2{
+  color: white;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  /* font-family: "Special Gothic Expanded One", sans-serif; */
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 20px;
+}
+.TrabajoTexto2{
+  margin-bottom: 50px;
+}
+.VictoriasWrapper {
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+}
+.Victorias{
+  color: white;
+  font-size: 6rem;
+    font-family: "League Spartan", sans-serif;
+    letter-spacing: -2px;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  margin-top: -80px;
+}
+.VictoriasWrapper2 {
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+}
+.Victorias2{
+  color: white;
+  font-size: 6rem;
+    font-family: "League Spartan", sans-serif;
+    letter-spacing: -2px;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  margin-top: -80px;
+}
+.VictoriasWrapper3 {
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+}
+.Victorias3{
+  color: white;
+  font-size: 6rem;
+    font-family: "League Spartan", sans-serif;
+    letter-spacing: -2px;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  margin-top: -80px;
+}
+.VictoriasTexto{
+  mix-blend-mode: difference;
+  color: white;
+  font-size: 3rem;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  white-space: normal;
+}
+
+/* SPONSORS */
+.CapaTransparente2{
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+.ContenedorSponsors{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  margin-top: 100px;
+  background-color: transparent;
+  overflow: hidden;
+  padding: 2rem 0;
+  position: relative;
+  z-index: -1;
+}
+.Sponsors{
+  display: flex;
+  width: fit-content;
+  animation: scrollSponsors 60s linear infinite;
+  gap: 4rem;
+}
+.CarruselSponsors {
+  display: flex;
+  gap: 4rem;
+}
+.CarruselSponsors img{
+    width: 150px;
+    height: auto;
+}
+@keyframes scrollSponsors {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* INFORMACION PERSONAL */
+.TituloInformacionPersonal{
+  color: white;
+  font-size: 45px;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  margin-top: 500px;
+  margin-bottom: 80px;
+}
+/* Proyectos */
+.Proyectos {
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.TituloProyectos{
+  color: white;
+  font-size: 45px;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  margin-top: 460px;
+  margin-bottom: 100px;
+}
+
+.cards-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.flip-card {
+  width: 300px;
+  height: 480px;
+  perspective: 1000px;
+  flex-shrink: 0;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+/* ROTACIÓN */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front img,
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+/* BACK */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card:hover {
+  transition: transform 0.3s;
+}
+
+footer{
+    text-align: center;
+}
+
+footer .row{
+    gap: 20px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px){
+
+  .ContenedorNombre{
+      left: 5%;
+      width: 90%;
+  }
+
+  .ContenedorNombre .apellido{
+      margin-top: -12px;
+      letter-spacing: -1px;
+  }
+
+  .Separacion{
+    height: 0;
+  }
+
+  .Victorias,
+  .Victorias2,
+  .Victorias3{
+      font-size: clamp(30px, 8vw, 60px);
+      text-align: center;
+  }
+
+  .VictoriasTexto{
+      font-size: 22px;
+      text-align: center;
+      padding: 0 20px;
+  }
+
+  .TituloTrabajo,
+  .TituloProyectos{
+      font-size: clamp(35px, 8vw, 70px);
+      text-align: center;
+      margin-top: 400px;
+  }
+
+  .ContenedorHabilidades{
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    height: auto;
+}
+  .ContenedorHabilidades img{
+      width: 100%;
+      max-width: 300px;
+  }
+
+}
+@media (max-width: 1240px){
+    .Victorias,
+    .Victorias2,
+    .Victorias3{
+        margin-top:50px;
+    }
+    .VictoriasTexto{
+      font-size: 22px;
+      text-align: center;
+      padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px){
+  .ContenedorSponsors{
+    margin-top: 10px;
+  }
+    .CarruselSponsors img{
+        width: 100px;
+    }
+}
+
+@media (max-width: 768px){
+
+  .about2-desktop{
+      display: none;
+  }
+
+  .about2-mobile{
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 70px;
+  }
+
+}
+@media (max-width: 1000px){
+
+  .cards-container{
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      width: 100%;
+  }
+  .flip-card{
+    margin-top: 20px;
+  }
+
+}
