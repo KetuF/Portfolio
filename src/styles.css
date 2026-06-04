@@ -37,6 +37,7 @@ html {
 }
 
 body {
+  padding-top: env(safe-area-inset-top);
   background: var(--bg);
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
@@ -44,7 +45,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   cursor: none;
-  background: #000000;
+  background: #000000!important;
 }
 
 /* NOISE OVERLAY — efecto de grano sutil sobre toda la app */
