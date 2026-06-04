@@ -37,7 +37,6 @@ html {
 }
 
 body {
-  padding-top: env(safe-area-inset-top);
   background: var(--bg);
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
