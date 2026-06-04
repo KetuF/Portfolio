@@ -984,15 +984,6 @@ footer {
    RESPONSIVE
    ============================================= */
 @media (max-width: 900px) {
-  nav{
-    top: -50px;
-    padding-top:
-      calc(env(safe-area-inset-top) + 1rem);
-    padding-right:1.5rem;
-    padding-bottom:1rem;
-    padding-left:1.5rem;
-  }
-
   .nav-links {
     display: none;
     position: absolute;
