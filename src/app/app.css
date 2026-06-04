@@ -22,7 +22,7 @@
 .cursor-ring {
   width: 38px;
   height: 38px;
-  border: 1.5px solid rgba(126, 255, 160, 0.4);
+  border: 1.5px solid rgba(5, 134, 255, 0.4);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -106,7 +106,7 @@ nav.scrolled {
 .nav-cta {
   background: transparent;
   border: 1.5px solid var(--border-glow);
-  color: var(--accent);
+  color: white;
   padding: 0.45rem 1.2rem;
   border-radius: 50px;
   font-size: 0.85rem;
@@ -116,11 +116,6 @@ nav.scrolled {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-}
-
-.nav-cta:hover {
-  background: rgba(126, 255, 160, 0.08);
-  box-shadow: 0 0 20px rgba(126, 255, 160, 0.15);
 }
 
 .hamburger {
@@ -164,7 +159,7 @@ nav.scrolled {
 .hero-glow-1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(126, 255, 160, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(126, 182, 255, 0.06) 0%, transparent 70%);
   top: 10%;
   left: -10%;
   animation: floatGlow 8s ease-in-out infinite;
@@ -202,12 +197,12 @@ nav.scrolled {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(126, 255, 160, 0.08);
-  border: 1px solid rgba(126, 255, 160, 0.2);
+  background: rgba(126, 193, 255, 0.08);
+  border: 1px solid rgba(126, 182, 255, 0.2);
   border-radius: 50px;
   padding: 0.35rem 1rem;
   font-size: 0.78rem;
-  color: var(--accent);
+  color: white;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
@@ -234,7 +229,7 @@ nav.scrolled {
 }
 
 .hero-name .highlight {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  background: linear-gradient(135deg, white 0%, rgb(0, 127, 247) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -260,7 +255,7 @@ nav.scrolled {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: white;
   color: #000;
   padding: 0.7rem 1.8rem;
   border-radius: 50px;
@@ -287,7 +282,7 @@ nav.scrolled {
 .btn-primary:hover::before { opacity: 0.12; }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(126, 255, 160, 0.3);
+  box-shadow: 0 12px 40px rgba(126, 186, 255, 0.3);
 }
 
 .btn-ghost {
@@ -345,6 +340,7 @@ nav.scrolled {
   background: conic-gradient(from 0deg, var(--accent), transparent, var(--accent2), transparent, var(--accent));
   opacity: 0.15;
   animation: rotateBorder 8s linear infinite;
+  z-index: 0;
 }
 
 @keyframes rotateBorder {
@@ -357,12 +353,15 @@ nav.scrolled {
   inset: 2px;
   border-radius: 50%;
   background: var(--card);
+  z-index: 1;
 }
 
-.hero-emoji {
+.hero-img{
+  width: 85%;
+  height: auto;
+  object-fit: contain;
   position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 0 20px rgba(126, 255, 160, 0.3));
+  z-index: 2;
 }
 
 /* =============================================
@@ -435,7 +434,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(126, 255, 160, 0.03) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(246, 247, 248, 0.03) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.4s;
   pointer-events: none;
@@ -443,20 +442,32 @@ section {
 
 .project-card:hover::before { opacity: 1; }
 .project-card:hover {
-  border-color: rgba(126, 255, 160, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(126, 255, 160, 0.06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.06);
 }
 
-.card-thumb {
-  height: 180px;
-  background: linear-gradient(135deg, #161616, #111);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.5rem;
-  position: relative;
+.card-thumb{
+  width: 100%;
+  height: 172px;
   overflow: hidden;
+  border-radius: 20px;
+  background: #101827;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.card-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .4s;
+  opacity: 0.8;
+}
+
+.project-card:hover .card-thumb img{
+  transform: scale(1.05);
+  opacity: 1;
 }
 
 .card-thumb::after {
@@ -488,10 +499,10 @@ section {
   font-weight: 500;
 }
 
-.tag-green  { background: rgba(126, 255, 160, 0.1); color: var(--accent);  border: 1px solid rgba(126, 255, 160, 0.2); }
-.tag-blue   { background: rgba(93, 232, 255, 0.1);  color: var(--accent2); border: 1px solid rgba(93, 232, 255, 0.2); }
-.tag-purple { background: rgba(199, 125, 255, 0.1); color: var(--accent3); border: 1px solid rgba(199, 125, 255, 0.2); }
-.tag-white  { background: rgba(255, 255, 255, 0.05); color: var(--muted); border: 1px solid var(--border); }
+.tag-green  { background: rgba(126, 255, 160, 0.1); color: rgba(255, 255, 255, 0.767); border: 1px solid rgba(126, 255, 160, 0.2); }
+.tag-blue   { background: rgba(93, 232, 255, 0.1);  color: rgba(255, 255, 255, 0.767); border: 1px solid rgba(93, 232, 255, 0.2); }
+.tag-purple { background: rgba(199, 125, 255, 0.1); color: rgba(255, 255, 255, 0.767); border: 1px solid rgba(199, 125, 255, 0.2); }
+.tag-white  { background: rgba(255, 255, 255, 0.05); color:rgba(255, 255, 255, 0.767); border: 1px solid var(--border); }
 
 .card-title {
   font-family: 'Syne', sans-serif;
@@ -536,7 +547,7 @@ section {
 /* Card horizontal */
 .project-card-wide {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 580px 1fr;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -568,6 +579,14 @@ section {
   align-items: center;
   justify-content: center;
   font-size: 5rem;
+}
+
+.card-wide-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .4s;
+  opacity: 0.8;
 }
 
 .card-wide-content {
@@ -636,9 +655,9 @@ section {
   box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35);
 }
 
-.skill-group-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.skill-group-icon img {
+  width: 150px;
+  height: 150px;
 }
 
 .skill-group-title {
@@ -672,10 +691,12 @@ section {
 .chip.green  { background: rgba(126, 255, 160, 0.07); color: rgba(126, 255, 160, 0.8); border: 1px solid rgba(126, 255, 160, 0.15); }
 .chip.blue   { background: rgba(93, 232, 255, 0.07);  color: rgba(93, 232, 255, 0.8);  border: 1px solid rgba(93, 232, 255, 0.15); }
 .chip.purple { background: rgba(199, 125, 255, 0.07); color: rgba(199, 125, 255, 0.8); border: 1px solid rgba(199, 125, 255, 0.15); }
+.chip.azul { background: rgba(1, 119, 255, 0.1);  color: rgba(60, 151, 255, 0.8); border: 1px solid rgba(93, 163, 255, 0.2); }
 
 .chip.green:hover  { background: rgba(126, 255, 160, 0.15); transform: translateY(-2px); }
 .chip.blue:hover   { background: rgba(93, 232, 255, 0.15);  transform: translateY(-2px); }
 .chip.purple:hover { background: rgba(199, 125, 255, 0.15); transform: translateY(-2px); }
+.chip.azul:hover { background: rgba(1, 119, 255, 0.15); transform: translateY(-2px); }
 
 /* =============================================
    SOBRE MÍ
@@ -713,7 +734,6 @@ section {
 .about-avatar {
   width: 180px;
   height: 180px;
-  background: linear-gradient(135deg, var(--card), #1a1a1a);
   border-radius: 50%;
   border: 1.5px solid var(--border);
   display: flex;
@@ -730,7 +750,6 @@ section {
   position: absolute;
   inset: -2px;
   border-radius: 50%;
-  background: conic-gradient(from 180deg, var(--accent3), transparent 40%, transparent 60%, var(--accent3));
   opacity: 0.2;
   animation: rotateBorder 10s linear infinite;
 }
@@ -740,11 +759,17 @@ section {
   position: absolute;
   inset: 2px;
   border-radius: 50%;
-  background: var(--card);
 }
 
-.about-avatar-emoji {
-  position: relative;
+.about-avatar-emoji{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-avatar-emoji img {
+  width: 180px;
+  height: 180px;
   z-index: 1;
 }
 
@@ -811,9 +836,9 @@ section {
 }
 
 .about-block p strong { color: var(--text); font-weight: 500; }
-.hl-green  { color: var(--accent); }
-.hl-blue   { color: var(--accent2); }
-.hl-purple { color: var(--accent3); }
+.hl-green  { color: var(--accent); font-weight: bold;}
+.hl-blue   { color: var(--accent2); font-weight: bold;}
+.hl-purple { color: var(--accent3); font-weight: bold;}
 
 .cert-list {
   list-style: none;
@@ -1003,4 +1028,5 @@ footer {
 @media (max-width: 600px) {
   .about-left    { flex-direction: column; align-items: flex-start; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .hero-name { font-weight: 700; }
 }

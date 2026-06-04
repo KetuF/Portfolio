@@ -25,12 +25,12 @@ export class App implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // Bloquear scroll mientras carga la intro
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
+    // document.documentElement.style.overflow = 'hidden';
   }
 
   ngAfterViewInit(): void {
-    this.initLenis();
+    // this.initLenis();
     this.initCursor();
     this.initNavbar();
     this.initRevealOnScroll();
@@ -39,18 +39,18 @@ export class App implements OnInit, AfterViewInit {
 
   // ─── Lenis — scroll suave ───────────────────────────────────────────────────
 
-  private initLenis(): void {
-    this.lenis = new Lenis({
-      duration: 2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+  // private initLenis(): void {
+  //   this.lenis = new Lenis({
+  //     duration: 2,
+  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  //   });
 
-    const raf = (time: number) => {
-      this.lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-  }
+  //   const raf = (time: number) => {
+  //     this.lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   };
+  //   requestAnimationFrame(raf);
+  // }
 
   // ─── Cursor personalizado ───────────────────────────────────────────────────
 
