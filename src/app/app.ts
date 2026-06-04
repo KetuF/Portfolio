@@ -55,6 +55,14 @@ export class App implements OnInit, AfterViewInit {
   // ─── Cursor personalizado ───────────────────────────────────────────────────
 
   private initCursor(): void {
+
+    if (
+      window.matchMedia('(hover: none)').matches ||
+      window.matchMedia('(pointer: coarse)').matches
+    ) {
+      return;
+    }
+
     const cursor = document.getElementById('cursor');
     const ring   = document.getElementById('cursorRing');
 

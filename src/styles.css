@@ -33,6 +33,7 @@
 /* BASE */
 html {
   scroll-behavior: smooth;
+  background: #000000;
 }
 
 body {
@@ -43,6 +44,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   cursor: none;
+  background: #000000;
 }
 
 /* NOISE OVERLAY — efecto de grano sutil sobre toda la app */
