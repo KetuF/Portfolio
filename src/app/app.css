@@ -45,8 +45,6 @@ nav {
   justify-content: space-between;
   padding: 1.1rem 3rem;
   background: #080808;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   border-bottom: 1px solid var(--border);
   transition: background 0.4s;
 }
