@@ -101,6 +101,10 @@ nav.scrolled {
   width: 100%;
 }
 
+.nav-links li{
+  margin-bottom: 10px;
+}
+
 .nav-cta {
   background: transparent;
   border: 1.5px solid var(--border-glow);
@@ -492,7 +496,7 @@ section {
 .tag {
   font-size: 0.68rem;
   padding: 0.22rem 0.65rem;
-  border-radius: 50px;
+  border-radius: 25px;
   letter-spacing: 0.05em;
   font-weight: 500;
 }
@@ -558,7 +562,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(93, 232, 255, 0.03) 0%, transparent 50%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
   opacity: 0;
   transition: opacity 0.4s;
   pointer-events: none;
@@ -566,7 +570,7 @@ section {
 
 .project-card-wide:hover::before { opacity: 1; }
 .project-card-wide:hover {
-  border-color: rgba(93, 232, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-4px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(93, 232, 255, 0.05);
 }
@@ -680,7 +684,7 @@ section {
 .chip {
   font-size: 0.78rem;
   padding: 0.3rem 0.85rem;
-  border-radius: 50px;
+  border-radius: 25px;
   font-weight: 500;
   transition: all 0.3s;
   cursor: default;
@@ -996,7 +1000,7 @@ footer {
   }
 
   .nav-links.open    { display: flex; }
-  .nav-links a       { padding: 0rem 2rem; }
+  .nav-links a       { padding: 0rem 2rem; font-weight: 600; }
   .hamburger         { display: flex; }
   .nav-cta           { display: none; }
 
